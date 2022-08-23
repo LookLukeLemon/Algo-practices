@@ -1,4 +1,4 @@
-const sort = (arr, N) => {
+const sort = (arr) => {
     const countingMap = []
 
     for(let i = 0; i < arr.length; i++) {
@@ -11,7 +11,8 @@ const sort = (arr, N) => {
 
     let result = ''
     for(let i = 0; i < countingMap.length; i++) {
-        
+        if(!countingMap[i]) continue;
+
         Array(countingMap[i]).fill(null).map(count => {
             result += `${i +1} `
         })
@@ -20,7 +21,7 @@ const sort = (arr, N) => {
     console.log(result)
 }
 
-const MAX = 5;
-const source = [1,1,5,4,1,3,2,5,4,1,4,2,3,2,5,1,2,3,1,1,1,1,1,1,1,5]
 
-sort(source, MAX);
+const source = [1,1,5,4,1,3,2,5,4,1,4,2,3,2,5,1,2,3,1,1,1,1,1,1,1,5,7, 44 ,55]
+
+sort(source);
